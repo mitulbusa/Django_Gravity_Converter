@@ -12,7 +12,7 @@ def apitosg(request):
         apivalue = request.POST['apivalue']
         if float(apivalue) > 0:
             try:
-                sgvalue = 141.5 / (float(apivalue) + 131.5)
+                sgvalue = (141.5 +131.5)/ float(apivalue)
                 return render(request, 'apitosg.html', {'sgvalue' : str(sgvalue)})
             except:
                 errormessage = 'Enter Integer or Float Only'
@@ -28,7 +28,7 @@ def sgtoapi(request):
         sgvalue = request.POST['sgvalue']
         if float(sgvalue) > 0:
             try:
-                apivalue = 141.5 / (float(sgvalue) + 131.5)
+                apivalue = (141.5 / float(sgvalue)) - 131.5
                 return render(request, 'sgtoapi.html', {'apivalue' : str(apivalue)})
             except:
                 errormessage = 'Enter Integer or Float Only'
