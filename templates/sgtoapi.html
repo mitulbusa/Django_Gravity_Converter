@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class='container ml-4 mt-4'>
+        <a href="">Home</a>
+        <a href="apitosg">API to SG</a>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="sgvalue">SG Value:</label>
+        <input type="text" id="sgvalue" name="sgvalue"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p> <b>API: {{apivalue}}</b></p>
+    <p> error: <b>{{errormessage}}</b></p>
+</div>
+{% endblock %}
