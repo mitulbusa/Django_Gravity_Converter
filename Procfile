@@ -1,1 +1,1 @@
-web: gunicorn intro.wsgi --log-file -
+web: gunicorn gravity_converter.wsgi --log-file -
