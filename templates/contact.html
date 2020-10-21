@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
     <div action='contact' class='container ml-4 mt-4'>
-        <a href="">Home</a>
-        <a href="sgtoapi">SG to API</a>
-        <a href="apitosg">APT to SG</a>
+        <a href="index" style="border:3px dotted blue; padding: 5px 5px">Home</a>
+        <a href="sgtoapi" style="border:3px dotted blue; padding: 5px 5px">SG to API</a>
+        <a href="apitosg" style="border:3px dotted blue; padding: 5px 5px">APT to SG</a>
+        <div class='container' style="padding-top: 10px">
     <form method="POST">
         {% csrf_token %}
         <label for="name">Name</label><br>
@@ -17,7 +18,7 @@
         
         <input type="submit" value="Submit">
     </form>
-
+</div>
     <b>{{message}}</b>
 
 </div>
