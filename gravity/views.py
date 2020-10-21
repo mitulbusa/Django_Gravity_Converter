@@ -12,7 +12,7 @@ def apitosg(request):
         apivalue = request.POST['apivalue']
         try:
             trial = float(apivalue)
-            sgvalue = (141.5 +131.5)/ float(apivalue)
+            sgvalue = 141.5 / (131.5 + float(apivalue))
             return render(request, 'apitosg.html', {'sgvalue' : str(sgvalue), 'apivalue' : str(apivalue)})
         except :
             errormessage = 'Value must be Positive Integer or Float'
