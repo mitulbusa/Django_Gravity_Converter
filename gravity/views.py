@@ -11,9 +11,9 @@ def apitosg(request):
     if request.method == 'POST':
         apivalue = request.POST['apivalue']
         try:
-            triall = float(apivalue)
+            trial = float(apivalue)
             sgvalue = (141.5 +131.5)/ float(apivalue)
-            return render(request, 'apitosg.html', {'sgvalue' : str(sgvalue)})
+            return render(request, 'apitosg.html', {'sgvalue' : str(sgvalue), 'apivalue' : str(apivalue)})
         except :
             errormessage = 'Value must be Positive Integer or Float'
             return render(request, 'apitosg.html', {'errormessage' : str(errormessage)})
@@ -26,7 +26,7 @@ def sgtoapi(request):
         try:
             trial = float(sgvalue)
             apivalue = (141.5 / float(sgvalue)) - 131.5
-            return render(request, 'sgtoapi.html', {'apivalue' : str(apivalue)})
+            return render(request, 'sgtoapi.html', {'sgvalue' : str(sgvalue),'apivalue' : str(apivalue)})
         except :
             errormessage = 'Value must be Positive Integer or Float'
             return render(request, 'sgtoapi.html', {'errormessage' : str(errormessage)})
